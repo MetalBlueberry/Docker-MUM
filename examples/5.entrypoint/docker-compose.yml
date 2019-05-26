@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  web:
+    build: server
+    ports:
+      - "4000:80"
+    init: true
+  redis:
+    image: redis

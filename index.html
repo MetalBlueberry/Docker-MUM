@@ -1,99 +1,257 @@
 <!doctype html>
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>How to Docker</title>
+    <title>How to Docker</title>
 
-	<link rel="stylesheet" href="reveal.js/css/reset.css">
-	<link rel="stylesheet" href="reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="reveal.js/css/theme/black.css">
-	<link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="custom.css">
 
-	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
 
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-		document.getElementsByTagName('head')[0].appendChild(link);
-	</script>
-</head>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+  </head>
 
-<body>
-	<div class="reveal">
-		<div class="slides">
-			<section>
-				<h1>How to use Docker</h1>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>How to use Docker</h1>
+        </section>
+        <section>
+          <section data-background-iframe="https://www.docker.com/" data-background-interactive>
+            <div class="float-right">
+              <h2>Docker main page</h2>
+              <p></p>
+            </div>
+          </section>
+          <section data-background-iframe="https://www.docker.com/why-docker" data-background-interactive>
+          </section>
+          <section data-background-iframe="https://docs.docker.com/get-started/" data-background-interactive>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>containerization concept</h1>
+          </section>
+          <section>
+            <h2>Containers and virtual machines</h2>
+            <img width="40%" src="https://docs.docker.com/images/Container%402x.png" alt="">
+            <img width="40%" src="https://docs.docker.com/images/VM%402x.png" alt="">
+            <aside class="notes">
+              <li>Similar to any other process</li>
+              <li>Share OS capabilities</li>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h1>Get Started</h1>
+        </section>
+        <section>
+          <section>
+            <h1>Dockerfile</h1>
+            <pre>
+          <code data-trim data-noescape>
+# Use an official Python runtime as a parent image
+FROM python:2.7-slim
 
-			</section>
-			<section>
-				<section data-background-iframe="https://www.docker.com/" data-background-interactive>
-					<!-- <iframe  data-src="https://www.docker.com/" data-preload ></iframe> -->
-					<div class="float-right">
-						<h2>Docker main page</h2>
-						<p></p>
-					</div>
-				</section>
-				<section data-background-iframe="https://www.docker.com/why-docker" data-background-interactive>
-					<!-- <iframe  data-src="https://www.docker.com/" data-preload ></iframe> -->
-					<div class="float-right">
-						<h2>This is why</h2>
-						<p></p>
-					</div>
-				</section>
-				<section data-background-iframe="https://docs.docker.com/get-started/" data-background-interactive>
-					<!-- <iframe  data-src="https://www.docker.com/" data-preload ></iframe> -->
-					<div class="float-right">
-						<h2>Everything starts here</h2>
-						<p></p>
-					</div>
-				</section>
-			</section>
-			<section>
-				<h1>containerization concept</h1>
-			</section>
-			<section>
-				<h2>Containers and virtual machines</h2>
-				<img width="40%" src="https://docs.docker.com/images/Container%402x.png" alt="">
-				<img width="40%" src="https://docs.docker.com/images/VM%402x.png" alt="">
-			</section>
-		</div>
-	</div>
-	<div class="hidden">
-		<img width="25%"
-			src="https://res.cloudinary.com/teepublic/image/private/s--hOdhXtVV--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1464028809/production/designs/521845_1.jpg"
-			alt="">
-	</div>
-	<script src="reveal.js/js/reveal.js"></script>
+# Set the working directory to /app
+WORKDIR /app
 
-	<script>
-		Reveal.addEventListener('slidechanged', function (event) {
-			console.log(event)
-			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-			frame = event.currentSlide
-			console.log(frame)
-		});
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
-		Reveal.initialize({
-			hash: true,
-			// Push each slide change to the browser history. Implies `hash: true`
-			history: true,
-			dependencies: [
-				{ src: 'reveal.js/plugin/markdown/marked.js' },
-				{ src: 'reveal.js/plugin/markdown/markdown.js' },
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true }
-			]
-		});
-	</script>
-</body>
+# Copy the current directory contents into the container 
+# at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+          </code>
+            </pre>
+          </section>
+          <section>
+            <h2>FROM</h2>
+            <pre>
+            <code data-trim data-noescape>
+# Use an official Python runtime as a parent image
+FROM python:2.7
+FROM python:2.7-slim
+FROM python:3
+FROM python:3.8
+FROM python:3.8-slim
+FROM python:3.8-alpine
+            </code> 
+            </pre>
+          </section>
+          <section data-background-iframe="https://hub.docker.com/_/python">
+            <div class="float-right">
+              <h2><a href="https://hub.docker.com/_/python">Docker HUB</a></h2>
+            </div>
+          </section>
+          <section data-background-iframe="https://hub.docker.com/_/redis">
+          </section>
+          <section>
+            <h2>WORKDIR and COPY</h2>
+            <pre>
+            <code data-trim data-noescape>
+WORKDIR /app
+WORKDIR /home
+WORKDIR user
+WORKDIR /app
+
+COPY main.py .
+COPY id_rsa .ssh/id_rsa
+COPY . .
+            </code> 
+            </pre>
+          </section>
+          <section>
+            <h2>RUN</h2>
+            <pre>
+            <code data-trim data-noescape>
+RUN pwd
+RUN apt-get update && apt-get install -y git \ 
+  python3 \
+  python3-pip
+RUN pip3 install -r requirements.txt
+            </code> 
+            </pre>
+          </section>
+          <section>
+            <h2>CMD and ENTRYPOINT</h2>
+            <pre>
+            <code data-trim data-noescape>
+ENTRYPOINT ["executable", "param1", "param2"]
+CMD ["executable", "param1", "param2"…]
+ENTRYPOINT ["/usr/bin/python"]
+CMD ['main.py']
+# /usr/bin/python main.py
+            </code> 
+            </pre>
+            <div class="float-right">
+              <h2><a target="_blank" href="https://docs.docker.com/engine/reference/builder/#entrypoint"><img
+                                     src="img/one-does-not-simply-set-cmd-command.jpg" alt=""></a></h2>
+            </div>
+          </section>
+          <section>
+            <h2>Hands on</h2>
+            Example 1.hello<br>
+            Example 2-python
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Docker compose</h1>
+            <h3>Run multiple images</h3>
+          </section>
+          <section>
+            <h2>compose syntax</h2>
+            <pre>
+            <code data-trim data-noescape>
+docker build --tag=friendlyhello .
+docker run -p 4000:80 friendlyhello     
+            </code> 
+            <code data-trim data-noescape>
+version: "2"
+services:
+  web:
+    build: server
+    ports:
+    - "4000:80
+            </code> 
+            <code data-trim data-noescape>
+docker-compose build
+docker-compose up -d
+            </code>
+            </pre>
+            <aside class="notes">
+              <li>all can be translated into docker compose syntax</li>
+            </aside>
+          </section>
+          <section>
+            <h2>add redis service</h2>
+            <pre>
+            <code data-trim data-noescape>
+version: "3"
+services:
+  web:
+    build: server
+    ports:
+    - "4000:80"
+  redis:
+    image: redis
+            </code> 
+            </pre>
+            <div>Example 3.compose</div>
+            <div>Example 4.dbadmin</div>
+          </section>
+        </section>
+        <section>
+        </section>
+        <section>
+          <li>x - Docker composer</li>
+          <li>multi stage build for compiled projects</li>
+          <li>x - environment isolation for interpreted languages</li>
+          <li>Download containers with tools</li>
+          <li>cross compile example</li>
+          <li>Download containers with environments</li>
+          <li>Mount file systems</li>
+          <li>Handle user inside containers /etc/passwd</li>
+        </section>
+      </div>
+    </div>
+    <div>
+      <li>https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</li>
+    </div>
+    <div class="hidden">
+      <img width="25%"
+           src="https://res.cloudinary.com/teepublic/image/private/s--hOdhXtVV--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1464028809/production/designs/521845_1.jpg"
+           alt="">
+    </div>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+      Reveal.addEventListener('slidechanged', function (event) {
+        console.log(event)
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        frame = event.currentSlide
+        console.log(frame)
+      });
+// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+  hash: true,
+  // Push each slide change to the browser history. Implies `hash: true`
+  history: true,
+  dependencies: [
+    { src: 'reveal.js/plugin/markdown/marked.js' },
+    { src: 'reveal.js/plugin/markdown/markdown.js' },
+    { src: 'reveal.js/plugin/notes/notes.js', async: true },
+    { src: 'reveal.js/plugin/highlight/highlight.js', async: true }
+  ]
+});
+    </script>
+  </body>
 
 </html>

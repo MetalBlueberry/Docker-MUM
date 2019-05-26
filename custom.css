@@ -1,8 +1,3 @@
-iframe {
-    width: 100%;
-    height: 600px;
-}
-
 .float-right {
     position: absolute;
     width: 30%;
@@ -15,7 +10,7 @@ iframe {
     text-align: left;
 }
 
-.float-left{
+.float-left {
     position: absolute;
     width: 40%;
     left: 0;
@@ -25,4 +20,8 @@ iframe {
     padding: 20px;
     font-size: 20px;
     text-align: left;
+}
+
+.code {
+    height: 500px;
 }
