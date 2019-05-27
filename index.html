@@ -191,15 +191,15 @@ docker-compose up -d
           <section>
             <h2>add redis service</h2>
             <pre>
-            <code data-trim data-noescape>
+            <code data-trim data-noescape >
 version: "3"
 services:
   web:
     build: server
     ports:
     - "4000:80"
-  redis:
-    image: redis
+<mark>  redis:
+    image: redis</mark>
             </code> 
             </pre>
             <div>Example 3.compose</div>
@@ -207,15 +207,26 @@ services:
           </section>
         </section>
         <section>
+          <section>
+            <h1>cross compile</h1>
+          </section>
+          <section>
+            <h1><a target="_blank" href="https://github.com/dockcross/dockcross">dockcross</a></h1>
+            <div>Example 6.crosscompile</div>
+          </section>
+          <section>
+            <h1>Multistage builds</h1>
+            <div>Example 7.multistage</div>
+          </section>
         </section>
         <section>
           <li>x - Docker composer</li>
-          <li>multi stage build for compiled projects</li>
+          <li>x - multi stage build for compiled projects</li>
           <li>x - environment isolation for interpreted languages</li>
-          <li>Download containers with tools</li>
-          <li>cross compile example</li>
-          <li>Download containers with environments</li>
-          <li>Mount file systems</li>
+          <li>x - Download containers with tools</li>
+          <li>x - cross compile example</li>
+          <li>x - Download containers with environments</li>
+          <li>x - Mount file systems</li>
           <li>Handle user inside containers /etc/passwd</li>
         </section>
       </div>
